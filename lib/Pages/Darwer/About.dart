@@ -11,6 +11,13 @@ class About extends StatefulWidget {
 
 class _AboutState extends State<About> {
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   List posts = [];
   List filteredPosts = [];
   bool isLoading = false;
@@ -53,26 +60,23 @@ class _AboutState extends State<About> {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
-        title: const Text("Products"),
+        title: Text("Products"),
         backgroundColor: Colors.orange,
       ),
-
-      // 🔥 FLOATING ACTION BUTTON
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         onPressed: getData,
-        child: const Icon(Icons.download),
+        child: Icon(Icons.download),
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0),
         child: Column(
           children: [
-            // 🔹 Search field
             TextField(
               decoration: InputDecoration(
                 hintText: "Search products...",
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -81,14 +85,12 @@ class _AboutState extends State<About> {
               ),
               onChanged: filterPosts,
             ),
-            const SizedBox(height: 12),
-
-            // 🔹 GridView
+            SizedBox(height: 12),
             Expanded(
               child: Builder(
                 builder: (context) {
                   if (posts.isEmpty && !isLoading) {
-                    return const Center(
+                    return Center(
                       child: Text(
                         "Ma'lumotni yuklash uchun tugmani bosing",
                         style: TextStyle(fontSize: 16),
@@ -97,13 +99,13 @@ class _AboutState extends State<About> {
                   }
 
                   if (isLoading) {
-                    return const Center(
+                    return Center(
                       child: CircularProgressIndicator(),
                     );
                   }
 
                   if (filteredPosts.isEmpty) {
-                    return const Center(
+                    return Center(
                       child: Text(
                         "Hech narsa topilmadi",
                         style: TextStyle(fontSize: 16),
@@ -113,7 +115,7 @@ class _AboutState extends State<About> {
 
                   return GridView.builder(
                     itemCount: filteredPosts.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
@@ -128,7 +130,7 @@ class _AboutState extends State<About> {
                           borderRadius: BorderRadius.circular(18),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -138,19 +140,19 @@ class _AboutState extends State<About> {
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              const SizedBox(height: 8),
+                              SizedBox(height: 8),
                               Text(
                                 post['title'],
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(height: 5),
+                              SizedBox(height: 5),
                               Text(
                                 "\$${post['price']}",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.orange,
                                   fontWeight: FontWeight.bold,
                                 ),

@@ -14,15 +14,15 @@ class _FirstcartState extends State<Thirdcart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           colors: [Color(0xffFF512F), Color(0xffF09819)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(25),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             color: Colors.black26,
             blurRadius: 8,
@@ -37,25 +37,22 @@ class _FirstcartState extends State<Thirdcart> {
           borderRadius: BorderRadius.circular(25),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /// IMAGE
               CircleAvatar(
                 radius: 65,
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
                   radius: 60,
                   backgroundImage:
-                  const AssetImage("assets/Ibrohimjon.jpg"),
+                  AssetImage("assets/Ibrohimjon.jpg"),
                 ),
               ),
 
-              const SizedBox(height: 18),
-
-              /// TITLE
-              const Text(
+              SizedBox(height: 18),
+              Text(
                 "Ibrat Academy",
                 style: TextStyle(
                   fontSize: 20,
@@ -64,10 +61,8 @@ class _FirstcartState extends State<Thirdcart> {
                 ),
               ),
 
-              const SizedBox(height: 8),
-
-              /// DESCRIPTION
-              const Text(
+              SizedBox(height: 8),
+              Text(
                 "Ibrohimjon Yetovqo'ziyev| 20.06.2013",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -76,9 +71,7 @@ class _FirstcartState extends State<Thirdcart> {
                 ),
               ),
 
-              const SizedBox(height: 15),
-
-              /// PROGRESS
+               SizedBox(height: 15),
               LinearProgressIndicator(
                 value: 0.7,
                 backgroundColor: Colors.white24,
@@ -86,16 +79,13 @@ class _FirstcartState extends State<Thirdcart> {
                 minHeight: 6,
               ),
 
-              const SizedBox(height: 15),
-
-              /// ACTIONS
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  /// LIKE
                   IconButton(
                     icon: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       child: Icon(
                         liked
                             ? Icons.favorite
@@ -109,10 +99,8 @@ class _FirstcartState extends State<Thirdcart> {
                       setState(() => liked = !liked);
                     },
                   ),
-
-                  /// SHARE (PASTDAN OCHILADI)
                   IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.share,
                       color: Colors.white,
                       size: 26,

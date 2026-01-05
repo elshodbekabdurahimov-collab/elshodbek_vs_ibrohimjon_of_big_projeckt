@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
             foregroundColor: Colors.black,
             elevation: 5,
             title: Padding(
-              padding: const EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 50),
+              padding: EdgeInsets.only(top: 50, left: 8, right: 8, bottom: 50),
               child: SizedBox(
                 height: 100,
                 child: ListView.builder(
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                     itemBuilder: (_, i){
                       final story = stories[i];
                       return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        padding: EdgeInsets.symmetric(horizontal: 6),
                         child: SizedBox(
                           width: 60,
                           child: SafeArea(
@@ -159,7 +159,7 @@ class _HomeState extends State<Home> {
                                   width: 70,
                                   child: Text(
                                     story["name"]!,
-                                    style: const TextStyle(fontSize: 12),
+                                    style: TextStyle(fontSize: 12),
                                     textAlign: TextAlign.center,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
@@ -219,14 +219,12 @@ class _HomeState extends State<Home> {
             });
 
             if (index == 0) {
-              // Profile
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Profile()),
+                MaterialPageRoute(builder: (context) => Profile()),
               );
             }
             else if (index == 1) {
-              // About
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -235,14 +233,12 @@ class _HomeState extends State<Home> {
               );
             }
             else if (index == 2) {
-              // Notifications
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Notifications()),
               );
             }
             else if (index == 3) {
-              // Settings
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -251,7 +247,7 @@ class _HomeState extends State<Home> {
               );
             }
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline_outlined),
               label: "Profile",

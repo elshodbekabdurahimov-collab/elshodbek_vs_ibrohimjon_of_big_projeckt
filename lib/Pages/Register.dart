@@ -47,13 +47,13 @@ class _RegisterState extends State<Register> {
         ),
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(18),
+            padding: EdgeInsets.all(18),
             child: Card(
               elevation: 25,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: Padding(
-                padding: const EdgeInsets.all(25),
+                padding: EdgeInsets.all(25),
                 child: Form(
                   key: _formKey,
                   child: Column(
@@ -67,7 +67,7 @@ class _RegisterState extends State<Register> {
                           color: Colors.orangeAccent.shade700,
                         ),
                       ),
-                      const SizedBox(height: 25),
+                      SizedBox(height: 25),
 
                       buildTextField(
                           controller: _nameController,
@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
                             return null;
                           }),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       buildTextField(
                           controller: _surnameController,
@@ -94,8 +94,7 @@ class _RegisterState extends State<Register> {
                             }
                             return null;
                           }),
-
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       buildTextField(
                           controller: _emailController,
@@ -113,7 +112,7 @@ class _RegisterState extends State<Register> {
                             return null;
                           }),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
                       buildTextField(
                           controller: _passwordController,
@@ -130,7 +129,7 @@ class _RegisterState extends State<Register> {
                             return null;
                           }),
 
-                      const SizedBox(height: 30),
+                      SizedBox(height: 30),
 
                       SizedBox(
                         width: double.infinity,
@@ -142,14 +141,14 @@ class _RegisterState extends State<Register> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (_) => const Home()));
+                                      builder: (_) => Home()));
                             }
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orangeAccent.shade700,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15))),
-                          child: const Text(
+                          child: Text(
                             "Ro'yxatdan o'tish",
                             style: TextStyle(
                                 fontSize: 18,
@@ -194,15 +193,15 @@ class _RegisterState extends State<Register> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(color: Colors.orangeAccent, width: 2),
+          borderSide: BorderSide(color: Colors.orangeAccent, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(color: Colors.red, width: 2),
+          borderSide: BorderSide(color: Colors.red, width: 2),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(color: Colors.redAccent, width: 2),
+          borderSide: BorderSide(color: Colors.redAccent, width: 2),
         ),
       ),
     );
